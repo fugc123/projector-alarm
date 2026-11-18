@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pitch_black">#FF000000</color>
+    <color name="midnight_surface">#FF0B1120</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB8C4D9</color>
+    <color name="accent_gold">#FFFFD166</color>
+    <color name="accent_sunrise">#FFFF9F1C</color>
+</resources>

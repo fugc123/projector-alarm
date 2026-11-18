@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projector Alarm</string>
+    <string name="dashboard_title">Projector Sunrise Alarm</string>
+    <string name="status_ready">Ready • Screen-off mode keeps Android awake in pitch black until sunrise</string>
+    <string name="alarm_time_label">Alarm Time</string>
+    <string name="time_colon">:</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_change_duration">Change</string>
+    <string name="duration_demo_format">Sunrise: %1$d min (Demo)</string>
+    <string name="duration_minutes_format">Sunrise: %1$d min</string>
+    <string name="btn_turn_off_screen">Turn Off Screen &amp; Arm Alarm</string>
+    <string name="btn_preview_sunrise">Preview Sunrise Now (1 min demo)</string>
+    <string name="remote_tip">Use D-Pad arrows and OK on your projector remote • Press OK or Back to wake</string>
+    <string name="blackout_hint">Screen Off Mode Active • Alarm set for %1$s • Press OK or Back to wake</string>
+    <string name="sunrise_dismiss_hint">Good Morning • Press OK on remote to dismiss</string>
+    <string name="default_clock">--:--</string>
+    <string name="default_hour">07</string>
+    <string name="default_minute">00</string>
+</resources>

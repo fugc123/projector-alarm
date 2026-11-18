@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pitch_black">
+
+    <com.projectoralarm.sunrise.SunriseView
+        android:id="@+id/sunriseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/dashboardCard"
+        android:layout_width="640dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_card"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="20dp">
+
+        <!-- Header row: Title + live digital clock -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dashboard_title"
+                android:textColor="@color/accent_gold"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCurrentClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_clock"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvStatusBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/status_ready"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <!-- Alarm time & sunrise duration configuration row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnHourMinus"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_button_focus"
+                android:focusable="true"
+                android:nextFocusDown="@id/btnBlackout"
+                android:nextFocusRight="@id/btnHourPlus"
+                android:text="@string/btn_minus"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAlarmHour"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/default_hour"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnHourPlus"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_button_focus"
+                android:focusable="true"
+                android:nextFocusDown="@id/btnBlackout"
+                android:nextFocusLeft="@id/btnHourMinus"
+                android:nextFocusRight="@id/btnMinuteMinus"
+                android:text="@string/btn_plus"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/time_colon"
+                android:textColor="@color/accent_gold"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnMinuteMinus"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_button_focus"
+                android:focusable="true"
+                android:nextFocusDown="@id/btnBlackout"
+                android:nextFocusLeft="@id/btnHourPlus"
+                android:nextFocusRight="@id/btnMinutePlus"
+                android:text="@string/btn_minus"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAlarmMinute"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/default_minute"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnMinutePlus"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_button_focus"
+                android:focusable="true"
+                android:nextFocusDown="@id/btnBlackout"
+                android:nextFocusLeft="@id/btnMinuteMinus"
+                android:nextFocusRight="@id/btnDurationCycle"
+                android:text="@string/btn_plus"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDurationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btnDurationCycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_button_focus"
+                    android:focusable="true"
+                    android:nextFocusDown="@id/btnBlackout"
+                    android:nextFocusLeft="@id/btnMinutePlus"
+                    android:text="@string/btn_change_duration"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Primary Night Blackout Button -->
+        <Button
+            android:id="@+id/btnBlackout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_button_primary_focus"
+            android:focusable="true"
+            android:nextFocusDown="@id/btnPreview"
+            android:nextFocusUp="@id/btnHourPlus"
+            android:text="@string/btn_turn_off_screen"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold">
+            <requestFocus />
+        </Button>
+
+        <!-- Secondary Preview Button -->
+        <Button
+            android:id="@+id/btnPreview"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_button_focus"
+            android:focusable="true"
+            android:nextFocusUp="@id/btnBlackout"
+            android:text="@string/btn_preview_sunrise"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/remote_tip"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</FrameLayout>
